@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Smart Stop - Login</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <div class="login-form">
+            <h1>Welcome to Smart Stop</h1>
+            <img src="https://example.com/your-image.jpg" alt="Traffic Image" class="banner-image">
+            <form id="loginForm" onsubmit="return handleLogin(event);">
+                <div class="input-group">
+                    <label for="username">Username</label>
+                    <input type="text" id="username" required>
+                </div>
+                <div class="input-group">
+                    <label for="password">Password</label>
+                    <input type="password" id="password" required>
+                </div>
+                <button type="submit">Login</button>
+            </form>
+            <p id="errorMessage" class="error-message"></p>
+        </div>
+    </div>
+
+    <script>
+        function handleLogin(event) {
+            event.preventDefault();
+            const username = document.getElementById('username').value;
+            const password = document.getElementById('password').value;
+
+            if (username === "user" && password === "password") {
+                window.location.href = "dashboard.html"; 
+            } else {
+                document.getElementById('errorMessage').innerText = "Invalid username or password.";
+            }
+        }
+    </script>
+</body>
+</html>
